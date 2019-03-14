@@ -8,16 +8,27 @@
   </div>
 </template>
 
-<script>
-  import TurbineStatus from '@/components/turbine/turbine-status';
-  import Turbine from '@/lib/turbine.ts';
+<script lang="ts">
 
-  export default {
+import TurbineStatus from '@/components/turbine/turbine-status.vue';
+import { Turbine } from '@/lib/turbine';
+import { Vue, Component, Prop } from 'vue-property-decorator';
+
+@Component({
     components: {
-      TurbineStatus,
+        TurbineStatus,
     },
-    props: ['turbines'],
-  };
+})
+export default class StatusBoard extends Vue {
+
+    @Prop()
+    private turbines!: Turbine[];
+
+    constructor() {
+        super();
+    }
+}
+
 </script>
 
 <style lang="scss" scoped>
