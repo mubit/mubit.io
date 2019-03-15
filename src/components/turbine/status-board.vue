@@ -1,49 +1,43 @@
 <template>
   <div class="status-board">
-    <TurbineStatus
-      v-for="turbine in turbines"
-      :key="turbine.label"
-      :turbine="turbine"
+    <StatusCircle
+      v-for="t in turbines"
+      :key="t.label"
+      :turbine="t"
     />
   </div>
 </template>
 
 <script lang="ts">
+  import { Vue, Component, Prop } from 'vue-property-decorator';
 
-import TurbineStatus from '@/components/turbine/turbine-status.vue';
-import { Turbine } from '@/lib/turbine';
-import { Vue, Component, Prop } from 'vue-property-decorator';
+  import StatusCircle from '@/components/turbine/status-circle.vue';
+  import { Turbine } from '@/lib/turbine';
 
-@Component({
+  @Component({
     components: {
-        TurbineStatus,
+        StatusCircle,
     },
-})
-export default class StatusBoard extends Vue {
-
+  })
+  export default class StatusBoard extends Vue {
     @Prop()
     private turbines!: Turbine[];
 
     constructor() {
         super();
     }
-}
-
+  }
 </script>
 
 <style lang="scss" scoped>
   .status-board {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row;
     flex-flow: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    flex-wrap: wrap;
+    box-pack: center;
+    box-orient: horizontal;
+    box-direction: normal;
     justify-content: center;
 
     .status {
