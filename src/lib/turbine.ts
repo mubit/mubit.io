@@ -1,4 +1,8 @@
 import Axios from 'axios';
+// @ts-ignore
+import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
+
+const EventSource = NativeEventSource || EventSourcePolyfill;
 
 export enum Status {
   DISCONNECTED = 'disconnected',

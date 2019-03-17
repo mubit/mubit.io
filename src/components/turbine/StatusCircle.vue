@@ -10,11 +10,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
-
-import { Turbine, Status } from '@/lib/turbine.ts';
+<script lang='ts'>
+import { Vue, Prop, Component } from 'vue-property-decorator';
+import { Turbine, Status } from '@/lib/turbine';
 
 const statusToClass = new Map<Status, string>([
   [Status.DISCONNECTED, 'status--offline'],

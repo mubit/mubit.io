@@ -10,7 +10,7 @@
 
 <script>
 import { globalTurbine } from '@/lib/turbine.ts';
-import TurbineWidget from '@/components/turbine/turbine-widget.vue';
+import TurbineWidget from '@/components/turbine/Widget.vue';
 import Layout from '@/components/default';
 
 export default {

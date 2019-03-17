@@ -9,7 +9,7 @@
 
 <script>
   import { globalTurbine, localTurbine } from '@/lib/turbine.ts';
-  import StatusBoard from '@/components/turbine/status-board';
+  import StatusBoard from '@/components/turbine/StatusBoard';
 
   export default {
     components: {

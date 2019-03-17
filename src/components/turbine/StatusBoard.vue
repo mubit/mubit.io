@@ -8,25 +8,25 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { Vue, Component, Prop } from 'vue-property-decorator';
+<script lang='ts'>
+import { Vue, Prop, Component } from 'vue-property-decorator';
+import { Turbine } from '@/lib/turbine';
 
-  import StatusCircle from '@/components/turbine/status-circle.vue';
-  import { Turbine } from '@/lib/turbine';
+import StatusCircle from '@/components/turbine/StatusCircle.vue';
 
-  @Component({
-    components: {
-        StatusCircle,
-    },
-  })
-  export default class StatusBoard extends Vue {
-    @Prop()
-    private turbines!: Turbine[];
+@Component({
+  components: {
+      StatusCircle,
+  },
+})
+export default class StatusBoard extends Vue {
+  @Prop()
+  private turbines!: Turbine[];
 
-    constructor() {
-        super();
-    }
+  constructor() {
+      super();
   }
+}
 </script>
 
 <style lang="scss" scoped>

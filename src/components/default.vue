@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import VHeader from '@/components/header';
+  import VHeader from '@/components/Header';
 
   export default {
     components: {

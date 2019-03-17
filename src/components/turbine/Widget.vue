@@ -9,26 +9,33 @@
       </p>
     </div>
     <div class="widget__shell">
-      <MessagesShell :turbine="turbine" />
+      <Shell :turbine="turbine" />
       <SendMessage :turbine="turbine" />
     </div>
   </div>
 </template>
 
-<script>
-import MessagesShell from '@/components/turbine/messages-shell';
-import SendMessage from '@/components/turbine/send-message';
-import Turbine from '@/lib/turbine.ts';
+<script lang='ts'>
+import { Vue, Prop, Component } from 'vue-property-decorator';
+import { Turbine } from '@/lib/turbine';
 
-export default {
+import Shell from '@/components/turbine/Shell.vue';
+import SendMessage from '@/components/turbine/SendMessage.vue';
+
+@Component({
   components: {
-    MessagesShell,
+    Shell,
     SendMessage,
   },
-  props: {
-    turbine: Turbine,
-  },
-};
+})
+export default class Widget extends Vue {
+  @Prop()
+  private turbine!: Turbine;
+
+  constructor() {
+    super();
+  }
+}
 </script>
 
 <style lang="scss" scoped>

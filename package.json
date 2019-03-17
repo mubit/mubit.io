@@ -6,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -19,24 +18,22 @@
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-e2e-cypress": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.5.1",
     "@vue/cli-plugin-pwa": "^3.5.0",
-    "@vue/cli-plugin-typescript": "^3.5.0",
-    "@vue/cli-plugin-unit-jest": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-core": "^6.26.3",
+    "@vue/cli-plugin-typescript": "^3.5.1",
+    "@vue/cli-plugin-unit-jest": "^3.5.1",
+    "@vue/cli-service": "^3.5.1",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
     "eslint": "^5.15.2",
-    "eventsource-polyfill": "^0.9.6",
-    "fibers": "^3.1.1",
+    "event-source-polyfill": "^1.0.5",
     "node-sass": "^4.11.0",
     "sass": "^1.17.3",
     "sass-loader": "^6.0.7",
     "ts-jest": "^23.0.0",
-    "typescript": "^3.2.1",
+    "typescript": "^3.3.3333",
     "vue-property-decorator": "^8.0.0",
-    "vue-template-compiler": "^2.6.9"
+    "vue-template-compiler": "^2.5.21"
   },
   "postcss": {
     "plugins": {
@@ -47,38 +44,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "vue",
-      "ts",
-      "tsx"
-    ],
-    "transform": {
-      "^.+\\.vue$": "vue-jest",
-      ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "snapshotSerializers": [
-      "jest-serializer-vue"
-    ],
-    "testMatch": [
-      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
-    ],
-    "testURL": "http://localhost/",
-    "globals": {
-      "ts-jest": {
-        "babelConfig": true
-      }
-    }
-  }
+  ]
 }
